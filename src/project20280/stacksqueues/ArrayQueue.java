@@ -4,14 +4,14 @@ import project20280.interfaces.Queue;
 
 public class ArrayQueue<E> implements Queue<E> {
 
-    private static final int CAPACITY = 1000;
+    private static int CAPACITY = 1000;
     private E[] data;
-    private final int front = 0;
-    private final int size = 0;
+    private int front = 0;
+    private int size = 0;
 
     public ArrayQueue(int capacity) {
         // TODO
-
+        data = (E[]) new Object[capacity];
     }
 
     public ArrayQueue() {
@@ -32,6 +32,10 @@ public class ArrayQueue<E> implements Queue<E> {
     @Override
     public void enqueue(E e) {
         // TODO
+        if (size == CAPACITY)
+            return;
+        data[front + size] = e;
+        size++;
     }
 
     @Override
@@ -42,7 +46,12 @@ public class ArrayQueue<E> implements Queue<E> {
     @Override
     public E dequeue() {
         // TODO
-        return null;
+        if (size == 0)
+            return null;
+        E val = data[front]; // store the data at the front
+        front++; // increment the index
+        size--;
+        return val;
     }
 
     public String toString() {

@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  * An implementation of a sorted map using a binary search tree.
  */
 
-public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
+public class TreeMap<K extends Comparable<K>, V> extends AbstractSortedMap<K, V> {
 
     // ---------------- nested BalanceableBinaryTree class ----------------
 
@@ -21,7 +21,7 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
      * to support binary search tree operations, and a specialized node class that
      * includes an auxiliary instance variable for balancing data.
      */
-    protected static class BalanceableBinaryTree<K, V> extends LinkedBinaryTree<Entry<K, V>> {
+    protected static class BalanceableBinaryTree<K extends Comparable<K>, V> extends LinkedBinaryTree<Entry<K, V>> {
         // -------------- nested BSTNode class --------------
         // this extends the inherited LinkedBinaryTree.Node class
         protected static class BSTNode<E> extends Node<E> {

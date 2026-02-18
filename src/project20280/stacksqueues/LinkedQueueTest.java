@@ -12,7 +12,7 @@ class LinkedQueueTest {
         LinkedQueue<Integer> s = new LinkedQueue<>();
         for (int i = 0; i < 10; ++i)
             s.enqueue(i);
-        assertEquals(10, s.size());
+        assertEquals(10, s.size()); // how to get size to work
     }
 
     @Test

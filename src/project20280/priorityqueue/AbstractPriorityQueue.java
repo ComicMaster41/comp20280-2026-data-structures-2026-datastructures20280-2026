@@ -56,6 +56,11 @@ public abstract class AbstractPriorityQueue<K, V> implements PriorityQueue<K, V>
             //return "<" + k + ", " + v + ">";
             return String.valueOf(k);
         }
+
+        @Override
+        public int compareTo(Entry<K, V> o) {
+            return 0;
+        }
     } //----------- end of nested PQEntry class -----------
 
     // instance variable for an AbstractPriorityQueue

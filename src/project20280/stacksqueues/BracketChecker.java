@@ -1,14 +1,48 @@
 package project20280.stacksqueues;
 
+import project20280.interfaces.Deque;
+import project20280.interfaces.Queue;
+import project20280.list.DoublyLinkedList;
+
 class BracketChecker {
-    private final String input;
+    private String input;
 
     public BracketChecker(String in) {
         input = in;
     }
 
-    public void check() {
+    public boolean check() {
         // TODO
+        Deque<Character> deque = new LinkedDeque<>();
+        for (char ch: input.toCharArray()) {
+            if (ch == '{' || ch == '[' || ch == '(') {
+                deque.addFirst(ch);
+            }
+
+            else if (ch == '}' || ch == ']' || ch == ')') {
+                // check some edge cases
+                // 1) do we have a match?
+                if (deque.isEmpty()) {
+
+                    return false;
+                }
+                // what if we ahve () for example
+                char openBrace = deque.first();
+
+
+                // check if we can make a match
+                // beginning would be deque.first
+                if (!((openBrace == '{' && ch == '}')
+                                || (openBrace == '[' && ch == ']')
+                                || (openBrace == '(' && ch == ')'))) {
+                        // if we don't ahve a maatch
+                    return false;
+                }
+
+                deque.removeFirst(); // gets rid of the match
+            }
+        }
+        return deque.isEmpty();
     }
 
     public static void main(String[] args) {
@@ -24,7 +58,7 @@ class BracketChecker {
         for (String input : inputs) {
             BracketChecker checker = new BracketChecker(input);
             System.out.println("checking: " + input);
-            checker.check();
+            System.out.println(checker.check());
         }
     }
 }

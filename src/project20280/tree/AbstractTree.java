@@ -28,7 +28,7 @@ public abstract class AbstractTree<E> implements Tree<E> {
     @Override
     public boolean isInternal(Position<E> p) {
         // TODO
-        return false;
+        return children(p) != null;
     }
 
     /**
@@ -41,7 +41,7 @@ public abstract class AbstractTree<E> implements Tree<E> {
     @Override
     public boolean isExternal(Position<E> p) {
         // TODO
-        return false;
+        return children(p) == null;
     }
 
     /**
@@ -53,7 +53,7 @@ public abstract class AbstractTree<E> implements Tree<E> {
     @Override
     public boolean isRoot(Position<E> p) {
         // TODO
-        return false;
+        return p == root();
     }
 
     /**
@@ -66,7 +66,14 @@ public abstract class AbstractTree<E> implements Tree<E> {
     @Override
     public int numChildren(Position<E> p) {
         // TODO
-        return 0;
+        int count = 0;
+        if (isInternal(p)) {
+            count++;
+        }
+        if (isExternal(p)) {
+            count++;
+        }
+        return count;
     }
 
     /**
@@ -101,7 +108,13 @@ public abstract class AbstractTree<E> implements Tree<E> {
      */
     public int depth(Position<E> p) throws IllegalArgumentException {
         // TODO
-        return 0;
+        if (isRoot(p)) {
+            return 0;
+        }
+
+        else {
+            return 1 + depth(parent(p));
+        }
     }
 
     /**
@@ -119,7 +132,11 @@ public abstract class AbstractTree<E> implements Tree<E> {
 
     public int height_recursive(Position<E> p) {
         // TODO
-        return 0;
+        int h = 0;
+        for (Position<E> c : children(p)) {
+            h = Math.max(h, 1 + height_recursive(c));
+        }
+        return h;
     }
 
     /**
@@ -181,6 +198,7 @@ public abstract class AbstractTree<E> implements Tree<E> {
      */
     private void preorderSubtree(Position<E> p, List<Position<E>> snapshot) {
         // TODO
+
     }
 
     /**
@@ -190,6 +208,11 @@ public abstract class AbstractTree<E> implements Tree<E> {
      */
     public Iterable<Position<E>> preorder() {
         // TODO
+        Position<E> p = root();
+        if (p == null) return null;
+        for (Position<E> e : children(p)) {
+            preorder()
+        }
         return null;
     }
 

@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class CircularlyLinkedList<E> implements List<E> {
 
     private class Node<T> {
-        private final T data;
+        private T data;
         private Node<T> next;
 
         public Node(T e, Node<T> n) {
@@ -28,22 +28,33 @@ public class CircularlyLinkedList<E> implements List<E> {
         }
     }
 
-    private final Node<E> tail = null;
-    private final int size = 0;
+    private Node<E> tail = null;
+    private int size = 0;
 
     public CircularlyLinkedList() {
-
+        tail = null;
+        size = 0;
     }
 
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return size <= 0;
     }
 
     @Override
     public E get(int i) {
         // TODO
-        return null;
+        if (size <= 0 || i >= size || i < 0) return null;
+
+        else {
+            Node<E> curr = tail.next; // this is the head
+            for (int j = 0; j < i; j++) {
+                curr = curr.next;
+            }
+
+            return curr.getData();
+        }
+
     }
 
     /**
@@ -56,16 +67,98 @@ public class CircularlyLinkedList<E> implements List<E> {
     @Override
     public void add(int i, E e) {
         // TODO
+        Node<E> temp = new Node<E>(e, null);
+
+        if (i < 0 || i > size) {
+            return;
+        }
+
+        if (tail == null) {
+            temp.next = temp;
+            tail = temp;
+            size = 1;
+            return;
+        }
+
+        // if head
+        if (i == 0){
+            temp.next = tail.next;
+            tail.next = temp;
+            size++;
+            return;
+        }
+
+        // if empty
+        if (tail == null) {
+            temp.next = temp; // point to itself
+            tail = temp;
+            size++;
+        }
+
+        else {
+            // if inbetween
+            Node<E> curr = tail.next; // this is the head
+            for (int j = 0; j < i - 1; j++) { // get the node right before the one we want to place
+                curr = curr.next;
+            }
+
+            temp.next = curr.next; // so whats after current node is what we inset
+            curr.next = temp;
+            if (curr == tail) {
+                tail = temp;
+            }
+
+            size++;
+        }
     }
 
     @Override
     public E remove(int i) {
         // TODO
-        return null;
+        // if head
+        if (i < 0 || i >= size){ // i == size is one step past the actual size (past tail)
+            return null;
+        }
+
+        if (tail == null) return null;
+
+        // if we want to remove the node at the beginning
+        Node<E> head = tail.next;
+        if (i == 0) {
+            if (size == 1) { // do we just have a single node H - 1 - T
+                tail = null;
+            }
+
+            else {
+                tail.next = head.next;
+            }
+            size--;
+            return head.getData();
+
+        }
+
+        // if inbetween
+        else {
+            Node<E> curr = tail.next; // this is the head
+            for (int j = 0; j < i - 1; j++) { // get the node right before the one we want to place
+                curr = curr.next;
+            }
+
+            Node<E> temp = curr.next; // This is the one we remove
+            curr.next = temp.next; // this is setting 2 to become 2, for example
+
+            if (tail == temp) {
+                tail = curr;
+            }
+
+            size--;
+            return temp.getData();
+        }
     }
 
     public void rotate() {
         // TODO
+        if (tail != null) tail = tail.next;
     }
 
     private class CircularlyLinkedListIterator<E> implements Iterator<E> {
@@ -98,23 +191,26 @@ public class CircularlyLinkedList<E> implements List<E> {
     @Override
     public E removeFirst() {
         // TODO
-        return null;
+        return remove(0);
     }
 
     @Override
     public E removeLast() {
         // TODO
-        return null;
+        if (size == 0) return null;
+        return remove(size - 1);
     }
 
     @Override
     public void addFirst(E e) {
         // TODO
+        add(0, e);
     }
 
     @Override
     public void addLast(E e) {
         // TODO
+        add(size, e);
     }
 
 

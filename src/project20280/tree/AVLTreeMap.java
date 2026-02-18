@@ -9,7 +9,7 @@ import java.util.Comparator;
  * An implementation of a sorted map using an AVL tree.
  */
 
-public class AVLTreeMap<K, V> extends TreeMap<K, V> {
+public class AVLTreeMap<K extends Comparable<K>, V> extends TreeMap<K, V> {
 
     /**
      * Constructs an empty map using the natural ordering of keys.

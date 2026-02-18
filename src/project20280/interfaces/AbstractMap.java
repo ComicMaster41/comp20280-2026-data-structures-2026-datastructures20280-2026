@@ -66,6 +66,10 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
             return String.valueOf(k);
         }
 
+        @Override
+        public int compareTo(Entry<K, V> o) {
+            return 0;
+        }
     } // ----------- end of nested MapEntry class -----------
 
     // Provides support for keySet() and values() methods, based upon

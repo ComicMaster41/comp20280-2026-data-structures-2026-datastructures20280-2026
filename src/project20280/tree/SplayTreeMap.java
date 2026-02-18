@@ -5,7 +5,7 @@ import project20280.interfaces.Position;
 
 import java.util.Comparator;
 
-public class SplayTreeMap<K, V> extends TreeMap<K, V> {
+public class SplayTreeMap<K extends Comparable<K>, V> extends TreeMap<K, V> {
 
     /**
      * Constructs an empty map using the natural ordering of keys.

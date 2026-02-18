@@ -76,7 +76,7 @@ class DoublyLinkedListTest {
 
         ll.remove(1);
         assertEquals("[0, 2, 3, 4]", ll.toString());
-    }
+    } // figure out why this is wrong
 
     @Test
     void testAdd() {
