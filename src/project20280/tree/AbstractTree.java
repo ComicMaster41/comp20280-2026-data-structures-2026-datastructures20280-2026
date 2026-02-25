@@ -1,10 +1,13 @@
 package project20280.tree;
 
 import project20280.interfaces.Position;
+import project20280.interfaces.Queue;
 import project20280.interfaces.Tree;
+import project20280.stacksqueues.LinkedQueue;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -198,7 +201,10 @@ public abstract class AbstractTree<E> implements Tree<E> {
      */
     private void preorderSubtree(Position<E> p, List<Position<E>> snapshot) {
         // TODO
-
+        snapshot.add(p); // doing this visits the left
+        for (Position<E> e : children(p)) {
+            preorderSubtree(e, snapshot); // visit right
+        }
     }
 
     /**
@@ -208,12 +214,11 @@ public abstract class AbstractTree<E> implements Tree<E> {
      */
     public Iterable<Position<E>> preorder() {
         // TODO
-        Position<E> p = root();
-        if (p == null) return null;
-        for (Position<E> e : children(p)) {
-            preorder()
+        List<Position<E>> snapshot = new ArrayList<>();
+        if (!isEmpty()) {
+            preorderSubtree(root(), snapshot);
         }
-        return null;
+        return snapshot;
     }
 
     /**
@@ -225,6 +230,12 @@ public abstract class AbstractTree<E> implements Tree<E> {
      */
     private void postorderSubtree(Position<E> p, List<Position<E>> snapshot) {
         // TODO
+        if (p == null) return;
+        // for all the children in p
+        for (Position<E> e : children(p)) {
+            preorderSubtree(p, snapshot); // now visit left
+        }
+        snapshot.add(p); // add after we look inside
     }
 
     /**
@@ -246,6 +257,16 @@ public abstract class AbstractTree<E> implements Tree<E> {
      */
     public Iterable<Position<E>> breadthfirst() {
         // TODO
-        return null;
+        Queue<Position<E>> q = new LinkedQueue<>();
+        LinkedList<Position<E>> pos = new LinkedList<>();
+        q.enqueue(root());
+        while (!q.isEmpty()) {
+            Position<E> p = q.dequeue();
+            pos.add(p);
+            for (Position<E> c : children((p))) {
+                q.enqueue(c);
+            }
+        }
+        return pos;
     }
 }

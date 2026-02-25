@@ -104,10 +104,24 @@ class LinkedBinaryTreeTest {
     void testHeight() {
         LinkedBinaryTree<Integer> bt = new LinkedBinaryTree<Integer>();
 
-        Integer[] arr = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        // Integer[] arr = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        Integer[] arr = new Integer[]{2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, null, null, null, 35};
         bt.createLevelOrder(arr);
 
-        assertEquals(3, bt.height());
+        assertEquals(5, bt.height());
+    }
+
+    @Test
+    void testRootToPaths() {
+        Integer[] inorder = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        Integer[] preorder = {5, 1, 0, 4, 2, 3, 7, 6, 8};
+        LinkedBinaryTree<Integer> bt = new LinkedBinaryTree<>();
+        bt.construct(inorder, preorder);
+
+        System.out.println(bt.toBinaryTreeString());
+
+        assertEquals("[[5, 1, 0], [5, 1, 4, 2, 3], [5, 7, 6], [5, 7, 8]]",
+                bt.rootToLeafPaths().toString());
     }
 
 }

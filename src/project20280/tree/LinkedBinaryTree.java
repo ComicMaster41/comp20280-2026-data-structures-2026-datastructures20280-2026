@@ -54,13 +54,170 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         }
     }
 
+    public Node<E> constructHelper (E[] in, int inStart, int inEnd, E[] pre, int preStart, int preEnd) {
+        if (inStart > inEnd || preStart > preEnd) {
+            return null;
+        }
+
+        // create root from first element in pre
+        E root = pre[preStart]; // 1. the first element of preorder is the root of the tree
+
+        // Find the root in the inorder traversal
+        int rootIndex = -1;
+        for (int i = inStart; i <= inEnd; ++i) {
+            if (in[i].equals(root)) {
+                rootIndex = i;
+                break;
+            }
+        }
+
+        // check if its valid
+        if (rootIndex == -1) throw new IllegalArgumentException("Root index is invalid");
+
+        // the left sub-tree will have nodes in range [start, index - 1]
+        int leftSize= rootIndex - inStart; // why do we go from the rootIndex -> start
+
+        // Create node to use for later
+        Node<E> node = new Node<E>(root, null, null, null);
+
+        // now traverse left and right
+        Node<E> left = constructHelper(in, inStart, rootIndex - 1, pre, preStart + 1, preStart + leftSize);
+        // QUESTIONS: explain from rootIndex - 1 to preStart + leftSize
+
+        // IMPORTANT BUG: ROOTINDEX - 1 WAS WRITTEN ORIGINALLY, THEN I CHANGED IT TO ROOTINDEX + 1
+        Node<E> right = constructHelper(in, rootIndex + 1, inEnd, pre, preStart + leftSize + 1, preEnd);
+        // QUESTION: why is it preStart + leftSize + 1, why the 1? -> bc. you don't wanna start from the end that you just finished at, you want to shift 1
+        // the right sub-tree will have nodes in range [index + 1, end]
+
+        // Now relink the left and right to the node
+        node.setLeft(left);
+        node.setRight(right);
+
+        if (left != null) {
+            left.setParent(node);
+        }
+
+        if (right != null) {
+            right.setParent(right);
+        }
+
+        return node;
+    }
+
+    public void construct(E[] in, E[] pre) {
+        if (in == null || pre == null) throw new IllegalArgumentException("In or pre are null");
+
+        if (in.length != pre.length) throw new IllegalArgumentException("In and pre must have the same length");
+
+        if (in.length == 0) {
+            this.root = null;
+            this.size = 0;
+            return;
+        }
+
+        // BUG: I forgot to put the this.root and i didn't get a tree... bruh
+        this.root = constructHelper(in, 0, in.length - 1, pre, 0, pre.length - 1);
+    }
+
+    public void rootToLeafPathsHelper(Position<E> p, List<E> currPath, List<List<E>> res) {
+        if (p == null) return;
+
+        // Add the current node to our path
+        currPath.add(p.getElement());
+
+        // if leaf, save and copy to current path
+        if (left(p) == null && right(p) == null) {
+            // copy the array in our main res array
+            res.add(new ArrayList<>(currPath));
+        }
+
+        else {
+            // explore the left and right
+            if (left(p) != null) {
+                rootToLeafPathsHelper(left(p), currPath, res);
+            }
+
+            if (right(p) != null) {
+                rootToLeafPathsHelper(right(p), currPath, res);
+            }
+        }
+
+        // backtrack (meaning we start from the end
+        currPath.remove(currPath.size() - 1);
+
+        // QUESTION: why do we backtrack?
+        // because we've reached a leaf and we want to go back to the parent
+    }
+
+    public List<List<E>> rootToLeafPaths() {
+        List<List<E>> res = new ArrayList<>();
+        // Originally I had isEmpty() and it was printing the empty array
+        // But changing it to root() == null made it work
+        if (root() == null) return res;
+
+        List<E> currPath = new ArrayList<>();
+        rootToLeafPathsHelper(root(), currPath, res);
+
+        return res;
+    }
+
+
     // accessor methods (not already implemented in AbstractBinaryTree)
 
     public static void main(String [] args) {
         LinkedBinaryTree<String> bt = new LinkedBinaryTree<>();
         String[] arr = { "A", "B", "C", "D", "E", null, "F", null, null, "G", "H", null, null, null, null };
         bt.createLevelOrder(arr);
+        System.out.println("Create Level Order");
         System.out.println(bt.toBinaryTreeString());
+
+        // Inorder and preorder
+
+        Integer[] inorder = {
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+                18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+        };
+
+        Integer[] preorder = {
+                18, 2, 1, 14, 13, 12, 4, 3, 9, 6, 5, 8, 7, 10, 11, 15, 16,
+                17, 28, 23, 19, 22, 20, 21, 24, 27, 26, 25, 29, 30
+        };
+
+        LinkedBinaryTree<Integer> bt1 = new LinkedBinaryTree<>();
+        bt1.construct(inorder, preorder);
+        System.out.println("Inorder/Preorder Tree");
+        System.out.println(bt1.toBinaryTreeString());
+
+        // Construct random binary tree
+        LinkedBinaryTree<Integer> bt2 = new LinkedBinaryTree<>();
+        bt2 = makeRandom(10);
+        System.out.println("Make Random Tree");
+        System.out.println(bt2.toBinaryTreeString());
+
+        // create random binary trees size n = [50, 5000]
+        System.out.println("Create random binary trees size n = [50, 5000]");
+        LinkedBinaryTree<Integer> bt3 = new LinkedBinaryTree<>();
+        int numSizes = 100;
+        double[] avgContainer = new double[numSizes];
+        int[] nVals = new int[numSizes];
+        int index = 0;
+        for (int i = 50; i <= 5000; i += 50) {
+            int sum = 0;
+            for (int j = 0; j < 100; j++) {
+                LinkedBinaryTree<Integer> dumTree = makeRandom(i);
+                int h = dumTree.height();
+                sum += h;
+            }
+
+            double avg = sum / 100.0;
+            nVals[index] = i;
+            avgContainer[index] = avg;
+            index++;
+        }
+
+        for (double j : avgContainer) {
+            System.out.println("Avg " + j);
+        }
     }
 
 
@@ -359,14 +516,15 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
     private Node<E> createLevelOrderHelper(java.util.ArrayList<E> l, Node<E> p, int i) {
         // TODO
         // think that each level is an array
-        if (i < l.size() && l.get(i) != null) {
-            Node<E> n = createNode(l.get(i), p, null, null);
-            n.left = createLevelOrderHelper(l, n, 2 * i + 1); // formula to find the left node
-            n.right = createLevelOrderHelper(l, n, 2 * i + 2); // formula to find the right node
-            ++size;
-            return n;
-        }
-        return p;
+        if (i >= l.size()) return null;
+
+        if (l.get(i) == null) return null;
+
+        Node<E> n = createNode(l.get(i), p, null, null);
+        n.left  = createLevelOrderHelper(l, n, 2 * i + 1);
+        n.right = createLevelOrderHelper(l, n, 2 * i + 2);
+        ++size;
+        return n;
     }
 
 
@@ -378,21 +536,23 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
     private Node<E> createLevelOrderHelper(E[] arr, Node<E> p, int i) {
         // TODO
-        if (i < arr.length && arr[i] != null) {
-            Node<E> n = createNode(arr[i], p, null, null);
-            n.left = createLevelOrderHelper(arr, n, 2 * i + 1); // formula to find the left node
-            n.right = createLevelOrderHelper(arr, n, 2 * i + 2); // formula to find the right node
-            ++size;
-            return n;
-        }
+        if (i >= arr.length) return null;
 
-        return p;
+        if (arr[i] == null) return null;
+
+        Node<E> n = createNode(arr[i], p, null, null);
+        n.left  = createLevelOrderHelper(arr, n, 2 * i + 1);
+        n.right = createLevelOrderHelper(arr, n, 2 * i + 2);
+        ++size;
+        return n;
     }
 
     public String toBinaryTreeString() {
         BinaryTreePrinter<E> btp = new BinaryTreePrinter<>(this);
         return btp.print();
     }
+
+    // Write binary tree from level order representation
 
     /**
      * Nested static class for a binary tree node.
