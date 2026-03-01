@@ -189,6 +189,12 @@ public class SinglyLinkedList<E> implements List<E> {
         return temp.element;
     }
 
+    public void reverse(Node<E> node) {
+        if (node == null) return;
+        reverse(node.next);
+        System.out.println("Node data: " + node.getElement());
+    }
+
     @Override
     public E removeFirst() {
         // TODO
@@ -278,5 +284,14 @@ public class SinglyLinkedList<E> implements List<E> {
         ll.remove(5);
         System.out.println(ll);
 
+        // Running reverse function
+        SinglyLinkedList<Integer> ll2 = new SinglyLinkedList<Integer>();
+        ll2.addFirst(0);
+        ll2.addFirst(1);
+        ll2.addFirst(2);
+        ll2.addFirst(3);
+        ll2.addFirst(4);
+        ll2.addLast(-1);
+        ll2.reverse(ll2.head);
     }
 }

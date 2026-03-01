@@ -1,10 +1,13 @@
 package project20280.tree;
 
+import java.math.BigInteger;
 import java.util.*;
 import project20280.interfaces.Position;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 
 /**
@@ -161,6 +164,41 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         return res;
     }
 
+    public static BigInteger fibSeq(int n) {
+        if (n <= 0) return BigInteger.valueOf(0);
+
+        else return fibSeq(n - 1).add(fibSeq(n - 2));
+    }
+
+    public static BigInteger tribSeq(int n) {
+        if (n <= 0) return BigInteger.valueOf(0);
+        if (n == 1) return BigInteger.valueOf(1);
+        if (n == 2) return BigInteger.valueOf(1);
+
+        else return tribSeq(n - 1).add(tribSeq(n - 2)).add(tribSeq(n - 3));
+    }
+
+    // 91 function
+    public static int NintyOneFunction(int n) {
+        if (n > 100)
+            return n - 10;
+        else return NintyOneFunction(NintyOneFunction(n + 11));
+    }
+
+    public static int Foo(int x) {
+        if (x / 2 == 0) return 0;
+        else {
+            System.out.println("Result of Foo is: " + x % 2);
+            return Foo(x / 2);
+        }
+    }
+
+    // FOR QUESTION 10
+    // Write method to print all leaf nodes from left to right
+    public static void leafNodeLeftToRight() {
+
+    }
+
 
     // accessor methods (not already implemented in AbstractBinaryTree)
 
@@ -218,6 +256,45 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         for (double j : avgContainer) {
             System.out.println("Avg " + j);
         }
+
+
+        // FOR RECURSION LAB
+//        final long LIMIT_NS = TimeUnit.MINUTES.toNanos(1);
+//
+//        for (int n = 1; n <= 100; n++) {
+//            long start = System.nanoTime();
+//
+//            BigInteger result = fibSeq(n);   // call your recursion here
+//
+//            long elapsed = System.nanoTime() - start;
+//
+//            System.out.printf(
+//                    "n=%d | time=%8.3f ms | fib(n)=%s%n",
+//                    n,
+//                    elapsed / 1_000_000.0,
+//                    result.toString()
+//            );
+//
+//            if (elapsed > LIMIT_NS) {
+//                System.out.println("Exceeded 1 minute at n=" + n + " (breaking).");
+//                break;
+//            }
+//        }
+
+        for (int i = 0; i < 9; ++i) {
+            System.out.println("Trib seq: " + tribSeq(i).toString());
+        }
+
+        System.out.println("Result of the 91 Function: " + NintyOneFunction(87));
+
+        // Call Foo function
+        System.out.println(Foo(2468));
+
+        LinkedBinaryTree<String> leafTest = new LinkedBinaryTree<>();
+        String[] arr1 = { "A", "B", "C", "D", "E", null, "F", null, null, "G", "H", null, null, null, null };
+        bt.createLevelOrder(arr1);
+        rootToLeafPaths(leafTest.head);
+
     }
 
 
