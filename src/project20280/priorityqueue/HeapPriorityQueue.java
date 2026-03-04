@@ -4,6 +4,7 @@ package project20280.priorityqueue;
  */
 
 import project20280.interfaces.Entry;
+import project20280.interfaces.PriorityQueue;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -44,6 +45,13 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
      */
     public HeapPriorityQueue(K[] keys, V[] values) {
         // TODO
+        int shorterLen = Math.min(keys.length, values.length);
+
+        for (int i = 0; i < keys.length; ++i) {
+            heap.add(i, new PQEntry<>(keys[i], values[i]));
+        }
+
+        heapify();
     }
 
     // protected utilities
@@ -99,6 +107,8 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
      */
     protected void heapify() {
         // TODO
+
+
     }
 
     // public methods

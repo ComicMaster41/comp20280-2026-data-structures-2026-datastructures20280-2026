@@ -16,7 +16,7 @@ import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
  */
 public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
-    static java.util.Random rnd = new java.util.Random();
+    static Random rnd = new Random();
     /**
      * The root of the binary tree
      */
@@ -292,8 +292,14 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
         LinkedBinaryTree<String> leafTest = new LinkedBinaryTree<>();
         String[] arr1 = { "A", "B", "C", "D", "E", null, "F", null, null, "G", "H", null, null, null, null };
-        bt.createLevelOrder(arr1);
-        rootToLeafPaths(leafTest.head);
+        leafTest.createLevelOrder(arr1);
+        List<List<String>> leafNodes = leafTest.rootToLeafPaths();
+        List<String> leaves = new ArrayList<>();
+        for (List<String> leafNode : leafNodes) {
+            String lastElement = leafNode.get(leafNode.size() - 1);
+            leaves.add(lastElement); // get the last item in the leafNode array
+        }
+        System.out.println("Leaf Test:" + leaves);
 
     }
 
@@ -590,7 +596,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         root = createLevelOrderHelper(l, root, 0);
     }
 
-    private Node<E> createLevelOrderHelper(java.util.ArrayList<E> l, Node<E> p, int i) {
+    private Node<E> createLevelOrderHelper(ArrayList<E> l, Node<E> p, int i) {
         // TODO
         // think that each level is an array
         if (i >= l.size()) return null;
