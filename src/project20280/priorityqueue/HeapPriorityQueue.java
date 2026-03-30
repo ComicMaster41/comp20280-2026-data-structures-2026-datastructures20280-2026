@@ -93,9 +93,9 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
      */
     protected void swap(int i, int j) {
         // TODO
-        int temp = i;
+        Entry<K,V> temp = heap.get(i);
         heap.set(i, heap.get(j));
-        heap.set(j, heap.get(temp));
+        heap.set(j, temp);
     }
 
     /**
@@ -116,7 +116,7 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
 
         swap(j, parentPos);
 
-        upheap(j);
+        upheap(parentPos);
     }
 
     /**
@@ -124,19 +124,16 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
      */
     protected void downheap(int j) {
         // TODO
-        if (j == 0) return; // base case
+        if (!hasLeft(j)) return; // if there is no left, stop
+        int smallerChild = left(j);
 
-        int parentPos = parent(j);
-        Entry<K, V> child = heap.get(j);
-        Entry<K, V> parent = heap.get(parent(j));
+        if (hasRight(j) && compare(heap.get(right(j)), heap.get(smallerChild)) < 0)
+            smallerChild = right(j);
 
-        if (compare(child, parent) < 0) {
-            return;
+        if (compare(heap.get(smallerChild), heap.get(j)) < 0) {
+            swap(j, smallerChild);
+            downheap(smallerChild);
         }
-
-        swap(j, parentPos);
-
-        downheap(j);
     }
 
     /**
@@ -199,9 +196,10 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
         // TODO
         if (heap.isEmpty()) return null;
 
-        Entry<K, V> minRem = min();
-        heap.remove(minRem);
-        downheap(0);
+        Entry<K, V> minRem = heap.get(0); // get the root
+        swap(0, heap.size() - 1); // swap root with last element
+        heap.remove(heap.size() - 1); // remove the last element
+        downheap(0); // recurr
         return minRem;
     }
 
