@@ -31,7 +31,7 @@ public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
     private int findIndex(K key) {
         // TODO
         for (int i = 0; i < table.size(); i++) {
-            if (table.get(i).getKey() == key) return i;
+            if (table.get(i).getKey().equals(key)) return i;
         }
         return -1;
     }
