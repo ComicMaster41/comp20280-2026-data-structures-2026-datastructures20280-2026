@@ -8,6 +8,8 @@ import project20280.interfaces.PriorityQueue;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Random;
+
 
 
 /**
@@ -145,7 +147,6 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
             insert(keys[i], values[i]);
         }
     }
-
     // public methods
 
     /**
@@ -185,6 +186,34 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
         upheap(heap.size() - 1);
         return newest;
     }
+
+    public static void pqSort(Integer[] arr) {
+        HeapPriorityQueue<Integer, Integer> pq = new HeapPriorityQueue<>();
+        for (Integer x : arr) {
+            pq.insert(x, x);
+        }
+
+        // remove the smallest
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = pq.removeMin().getKey();
+        }
+    }
+
+//
+//    public static void inPlacePQSort(Integer[] arr) {
+//        int n = arr.length;
+//        for (int i = 0; i < n; i++) {
+//            heapify(i, i);
+//        }
+//
+//        for (int i = n - 1; i > 1; i--) {
+//            swap(0, i);
+//            for (int j = 0; j < i - 1; j++) {
+//                downheap(j);
+//            }
+//        }
+//    }
+
 
     /**
      * Removes and returns an entry with minimal key.
@@ -244,5 +273,44 @@ public class HeapPriorityQueue<K, V> extends AbstractPriorityQueue<K, V> {
         //        2,            4,
         //   23,     21,      5, 12,
         // 24, 26, 35, 33, 15]
+    }
+}
+class PQSortTiming {
+
+    private static final Random rand = new Random();
+
+    public static Integer[] generateRandomArray(int n) {
+        Integer[] arr = new Integer[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = rand.nextInt(1_000_000);
+        }
+        return arr;
+    }
+
+    public static void pqSort(Integer[] arr) {
+        HeapPriorityQueue<Integer, Integer> pq = new HeapPriorityQueue<>();
+
+        for (Integer x : arr) {
+            pq.insert(x, x);
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = pq.removeMin().getKey();
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] sizes = {1000, 5000, 10000, 50000, 100000, 500000, 1000000};
+
+        for (int n : sizes) {
+            Integer[] arr = generateRandomArray(n);
+
+            long start = System.nanoTime();
+            pqSort(arr);
+            long end = System.nanoTime();
+
+            double ms = (end - start) / 1_000_000.0;
+            System.out.println("n = " + n + ", time = " + ms + " ms");
+        }
     }
 }

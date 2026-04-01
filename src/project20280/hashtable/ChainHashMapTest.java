@@ -29,6 +29,10 @@ class ChainHashMapTest {
         for (int i = 0; i < n; ++i) {
             map.put(Integer.toString(i), i);
         }
+        for (int i = 0; i < n; ++i) {
+            map.put(Integer.toString(i), i);
+            System.out.println("Inserted: " + i + " -> " + map.get(Integer.toString(i)));
+        }
         assertEquals(5, map.get("5"));
         assertEquals(2, map.get("2"));
     }
