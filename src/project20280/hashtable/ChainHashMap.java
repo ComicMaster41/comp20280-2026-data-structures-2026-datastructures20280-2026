@@ -2,7 +2,10 @@ package project20280.hashtable;
 
 import project20280.interfaces.Entry;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /*
  * Map implementation using hash table with separate chaining.
@@ -129,16 +132,56 @@ public class ChainHashMap<K, V> extends AbstractHashMap<K, V> {
         return entrySet().toString();
     }
 
-    public static void main(String[] args) {
+    public static void countFreq() throws FileNotFoundException {
+        File f = new File("sample_text.txt");
+        ChainHashMap<String, Integer> counter = new ChainHashMap<String, Integer>();
+
+        Scanner scanner = new Scanner(f);
+        while (scanner.hasNext()) {
+            String word = scanner.next();
+            System.out.println("Word: " + word);
+
+            Integer freq = counter.get(word);
+
+            // if word not in hashmap, add with count = 1
+            if (freq == null) {
+                counter.put(word, 1);
+            }
+            // otherwise, find the entry for this word and increment it by 1
+            else {
+                counter.put(word, freq + 1);
+            }
+        }
+
+        // sort keys values
+        counter.entrySet();
+
+        // can you sort entries by values?
+        scanner.close();
+
+        System.out.println("counter: " + counter);
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
         ChainHashMap<Integer, String> m = new ChainHashMap<Integer, String>();
-        m.put(1, "One");
-        m.put(10, "Ten");
+        m.put(12, "Twelve");
+        m.put(44, "Forty-Four");
+        m.put(13, "Thirteen");
+        m.put(88, "Eighty-Eight");
+        m.put(23, "Twenty-Three");
+        m.put(94, "Nintey-Four");
         m.put(11, "Eleven");
+        m.put(39, "Thirty-Nine");
         m.put(20, "Twenty");
+        m.put(16, "Sixteen");
+        m.put(5, "Five");
 
         System.out.println("m: " + m);
 
-        m.remove(11);
-        System.out.println("m: " + m);
+        // m.remove(11);
+
+        // Q5) write a function to count frequencies of words in a file
+        // sample_text.txt
+        countFreq();
     }
 }
