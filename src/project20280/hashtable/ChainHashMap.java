@@ -133,13 +133,12 @@ public class ChainHashMap<K, V> extends AbstractHashMap<K, V> {
     }
 
     public static void countFreq() throws FileNotFoundException {
-        File f = new File("sample_text.txt");
+        File f = new File("src/project20280/hashtable/sample_text.txt");
         ChainHashMap<String, Integer> counter = new ChainHashMap<String, Integer>();
 
         Scanner scanner = new Scanner(f);
         while (scanner.hasNext()) {
             String word = scanner.next();
-            System.out.println("Word: " + word);
 
             Integer freq = counter.get(word);
 
@@ -159,7 +158,103 @@ public class ChainHashMap<K, V> extends AbstractHashMap<K, V> {
         // can you sort entries by values?
         scanner.close();
 
-        System.out.println("counter: " + counter);
+        // sort to get the 10 highest frequencies
+        for (Entry<String, Integer> e : counter.entrySet()) {
+            if (e.getValue() >= 10) {
+                System.out.println(e.getKey() + " and " + e.getValue());
+            }
+        }
+
+    }
+
+    public static int countCollisions(int p, boolean isPoly) throws FileNotFoundException {
+        File f = new File("src/project20280/hashtable/words.txt");
+        ChainHashMap<Integer, Integer> counter = new ChainHashMap<Integer, Integer>();
+        int collisions = 0;
+
+        Scanner scanner = new Scanner(f);
+        while (scanner.hasNext()) {
+            String word = scanner.next();
+            int h = 0;
+            if (isPoly)
+                h = hash_poly(word, p);
+            else
+                h = hash_cyclic(word, p);
+
+            Integer freq = counter.get(h);
+
+            // if word not in hashmap, add with count = 1
+            if (freq == null) {
+                counter.put(h, 1);
+            }
+            // otherwise, find the entry for this word and increment it by 1
+            else {
+                collisions++;
+                counter.put(h, freq + 1);
+            }
+        }
+        // can you sort entries by values?
+        scanner.close();
+
+        System.out.println("P: " + p + " has " + collisions);
+        return collisions;
+    }
+
+    public static int oldCountCollision() throws FileNotFoundException {
+        File f = new File("src/project20280/hashtable/words.txt");
+        ChainHashMap<Integer, Integer> counter = new ChainHashMap<Integer, Integer>();
+        int collisions = 0;
+
+        Scanner scanner = new Scanner(f);
+        while (scanner.hasNext()) {
+            String word = scanner.next();
+            int h = oldJavaHashCode(word);
+
+            Integer freq = counter.get(h);
+
+            // if word not in hashmap, add with count = 1
+            if (freq == null) {
+                counter.put(h, 1);
+            }
+            // otherwise, find the entry for this word and increment it by 1
+            else {
+                collisions++;
+                counter.put(h, freq + 1);
+            }
+        }
+        // can you sort entries by values?
+        scanner.close();
+
+        System.out.println("Old collision has " + collisions);
+        return collisions;
+    }
+
+    public static int hash_poly(String s, int a) {
+        int h = 0;
+        int n = s.length();
+        for(int i=0; i<n; i++) {
+            char s_i = (char) s.charAt(i);
+            int v = s_i * ((int) Math.pow(a,n-i-1));
+            h += v;
+        }
+        return h;
+    }
+
+    public static int hash_cyclic(String s, int shift) {
+        int h = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            h = (h << shift) | (h >>> (32-shift));
+            h += (int) s.charAt(i);
+        }
+        return h;
+    }
+
+    public static int oldJavaHashCode(String s) {
+        int hash = 0;
+        int skip = Math.max(1, s.length() / 8);
+        for (int i = 0; i < s.length(); i += skip)
+            hash = (hash * 37) + s.charAt(i);
+        return hash;
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -183,5 +278,19 @@ public class ChainHashMap<K, V> extends AbstractHashMap<K, V> {
         // Q5) write a function to count frequencies of words in a file
         // sample_text.txt
         countFreq();
+
+        countCollisions(41, true);
+        countCollisions(17, true);
+        countCollisions(7, false);
+        // For d)
+        int smallestCollision = Integer.MAX_VALUE;
+        for (int i = 0; i < 32; i++) {
+            int small = countCollisions(i, false);
+            if (smallestCollision > small)
+                smallestCollision = small;
+        }
+
+        System.out.println("Smallest collision is: "+ smallestCollision);
+        oldCountCollision();
     }
 }
