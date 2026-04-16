@@ -399,22 +399,9 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         // check if the tree is null
         if (root != null) throw new IllegalStateException("Root is not null!");
 
-        Node<E> newNode = new Node<>(e, null, null, null);
-        root = newNode;
-        // if this is not true, trhow an error
-
-        // then set the size to be 1
-
-        if (size() == 0) {
-            size = 1;
-        }
-
-        else {
-            throw new IllegalStateException("The tree is not null!");
-        }
-
-        return newNode;
-
+        root = createNode(e, null, null, null);
+        size = 1;
+        return root;
     }
 
     /**
@@ -696,3 +683,4 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         }
     }
 }
+

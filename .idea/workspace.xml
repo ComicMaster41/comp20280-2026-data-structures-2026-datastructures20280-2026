@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f91d92c7-fac7-4f20-82fd-d03da1e86cee" name="Changes" comment="Commiting treap">
+      <change afterPath="$PROJECT_DIR$/src/project20280/tree/TreapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/exercises/Wk1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/hashtable/AbstractHashMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/hashtable/ChainHashMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/hashtable/ChainHashMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/hashtable/ProbeHashMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/hashtable/ProbeHashMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/hashtable/UnsortedTableMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/hashtable/sample_text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/AbstractMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/BinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/Deque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/Entry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/Map.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/PriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/Queue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/SortedMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/Stack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/interfaces/Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/list/CircularlyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/list/CircularlyLinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/list/DoublyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/list/DoublyLinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/list/SinglyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/list/SinglyLinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/priorityqueue/AbstractPriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/priorityqueue/DefaultComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/priorityqueue/HeapPriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/priorityqueue/HeapPriorityQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/ArrayQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/ArrayQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/ArrayStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/ArrayStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/BracketChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/LinkedCircularQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/LinkedDeque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/LinkedDequeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/LinkedQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/LinkedQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/LinkedStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/stacksqueues/LinkedStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/AVLTreeMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/AVLTreeMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/AbstractBinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/AbstractSortedMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/AbstractTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/BinaryTreePrinter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/LinkedBinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/LinkedBinaryTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/SplayTreeMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/SplayTreeMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/Treap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/TreeMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/TreeMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/tree/LinkedBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/LinkedBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/tree/Treap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/Treap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/tree/TreeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/TreeMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/tree/TreeMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/TreeMapTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ComicMaster41&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:ComicMaster41/comp20280-2026-data-structures-2026-datastructures20280-2026.git&quot;,
+    &quot;accountId&quot;: &quot;40b45930-020c-4824-87ee-ecff2e8181b2&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/lib/src.zip!/java.base/java/util/ArrayList.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="38yuEP2SIujWTWdK4ym6Dn2dnLx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.BracketChecker.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ChainHashMap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DoublyLinkedList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HeapPriorityQueue.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LinkedBinaryTree.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LinkedDeque.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PQSortTestData.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SinglyLinkedList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Treap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TreapTest.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.ArrayQueueTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArrayQueueTest.testDequeue.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArrayQueueTest.testEnqueue.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArrayQueueTest.testFirst.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArrayQueueTest.testIsEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArrayQueueTest.testSize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArrayStackTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChainHashMapTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChainHashMapTest.testGet.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChainHashMapTest.testRemove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChainHashMapTest.testSize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testAdd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testAddFirst.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testAddLast.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testGet.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testIsEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testRemove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testRemoveFirst.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testRemoveLast.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testRotate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testSize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CircularlyLinkedListTest.testToString.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testAdd.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testFirst.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testGet.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testIsEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testIterator.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testLast.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testRemove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testRemoveLast.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testSize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DoublyLinkedListTest.testToString.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeapPriorityQueueTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HeapPriorityQueueTest.testMin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.testAddRoot.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.testCreateLevelOrder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.testHeight.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.testInorder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.testRemove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.testRootToPaths.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.testSize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedBinaryTreeTest.testToString.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedDequeTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedQueueTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedQueueTest.testSize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LinkedStackTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SinglyLinkedListTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SinglyLinkedListTest.testIsEmpty.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.SinglyLinkedListTest.testRemoveLast.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.TreapTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreapTest.testFirstEntry.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreapTest.testGet.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreapTest.testPut.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreapTest.testRemoveK.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreapTest.testRoot.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreapTest.testSize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreeMapTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreeMapTest.testPut.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreeMapTest.testRoot.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TreeMapTest.testSize.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/comicmaster/Comp-Sci Folder/comp20280-2026-data-structures-2026-datastructures20280-2026/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.30114943&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="project20280.tree" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DoublyLinkedList">
+    <configuration name="DoublyLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project20280.list.DoublyLinkedList" />
+      <module name="project20280" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project20280.list.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Treap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.Treap" />
+      <module name="project20280" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project20280.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TreapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mortgage-calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project20280.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project20280.tree" />
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.TreapTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TreapTest.testPut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mortgage-calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project20280.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project20280.tree" />
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.TreapTest" />
+      <option name="METHOD_NAME" value="testPut" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TreapTest.testRemoveK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mortgage-calculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project20280.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project20280.tree" />
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.TreapTest" />
+      <option name="METHOD_NAME" value="testRemoveK" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DoublyLinkedList" />
+        <item itemvalue="Application.Treap" />
+        <item itemvalue="JUnit.TreapTest.testRemoveK" />
+        <item itemvalue="JUnit.TreapTest.testPut" />
+        <item itemvalue="JUnit.TreapTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f91d92c7-fac7-4f20-82fd-d03da1e86cee" name="Changes" comment="" />
+      <created>1769784019861</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769784019861</updated>
+      <workItem from="1770976377693" duration="2903000" />
+      <workItem from="1771233289184" duration="7387000" />
+      <workItem from="1771319083078" duration="59000" />
+      <workItem from="1771410846817" duration="12886000" />
+      <workItem from="1771844672228" duration="1614000" />
+      <workItem from="1771928390193" duration="4487000" />
+      <workItem from="1772014583467" duration="11278000" />
+      <workItem from="1772041778629" duration="189000" />
+      <workItem from="1772102357142" duration="8000" />
+      <workItem from="1772185414917" duration="2814000" />
+      <workItem from="1772291049864" duration="6511000" />
+      <workItem from="1772633076662" duration="4489000" />
+      <workItem from="1774448824219" duration="6441000" />
+      <workItem from="1774863362738" duration="4569000" />
+      <workItem from="1774948063361" duration="27000" />
+      <workItem from="1774967742891" duration="8298000" />
+      <workItem from="1775048470098" duration="5338000" />
+      <workItem from="1775120747661" duration="1207000" />
+      <workItem from="1775570514358" duration="7389000" />
+      <workItem from="1775653835486" duration="6220000" />
+      <workItem from="1775823412678" duration="1837000" />
+      <workItem from="1775903976091" duration="100000" />
+      <workItem from="1776071422757" duration="5885000" />
+      <workItem from="1776112845926" duration="637000" />
+      <workItem from="1776168028914" duration="6443000" />
+      <workItem from="1776253288511" duration="262000" />
+      <workItem from="1776256561844" duration="8023000" />
+      <workItem from="1776329366726" duration="7676000" />
+      <workItem from="1776339366654" duration="266000" />
+      <workItem from="1776340739781" duration="171000" />
+      <workItem from="1776341337067" duration="25000" />
+      <workItem from="1776341382525" duration="251000" />
+      <workItem from="1776341642880" duration="1923000" />
+      <workItem from="1776347958534" duration="311000" />
+    </task>
+    <task id="LOCAL-00001" summary="Commiting treap">
+      <option name="closed" value="true" />
+      <created>1776335911868</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776335911868</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commiting treap">
+      <option name="closed" value="true" />
+      <created>1776336170685</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776336170685</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Commiting treap">
+      <option name="closed" value="true" />
+      <created>1776336188654</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776336188654</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commiting treap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commiting treap" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/project20280/stacksqueues/LinkedQueueTest.java</url>
+          <line>10</line>
+          <properties class="project20280.stacksqueues.LinkedQueueTest" method="testSize">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/project20280/tree/LinkedBinaryTreeTest.java</url>
+          <line>73</line>
+          <properties class="project20280.tree.LinkedBinaryTreeTest" method="testCreateLevelOrder">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/project20280/tree/LinkedBinaryTreeTest.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/project20280/tree/TreeMap.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
