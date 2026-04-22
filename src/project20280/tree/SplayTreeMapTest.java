@@ -49,7 +49,7 @@ class SplayTreeMapTest {
         }
 
         assertEquals(12, map.size());
-        assertEquals("26", map.remove(26));
+        assertEquals(26, map.remove(26));
         assertEquals(11, map.size());
     }
 
@@ -134,10 +134,10 @@ class SplayTreeMapTest {
         assertEquals(12, map.higherEntry(11).getKey());
     }
 
-    @Test
-    void testEntrySet() {
-        fail("Not yet implemented");
-    }
+//    @Test
+//    void testEntrySet() {
+//        fail("Not yet implemented");
+//    }
 
     @Test
     void testToString() {

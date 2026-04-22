@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f91d92c7-fac7-4f20-82fd-d03da1e86cee" name="Changes" comment="Commiting treap">
-      <change afterPath="$PROJECT_DIR$/src/project20280/tree/TreapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/exercises/Wk1.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/hashtable/AbstractHashMap.java" beforeDir="false" />
@@ -63,10 +64,9 @@
       <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/TreeMap.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/src/project20280/tree/TreeMapTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project20280/hashtable/words.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project20280/tree/LinkedBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/LinkedBinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project20280/tree/Treap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/Treap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project20280/tree/TreeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/TreeMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project20280/tree/TreeMapTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/TreeMapTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/tree/AbstractBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/AbstractBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/tree/AbstractTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/AbstractTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project20280/tree/SplayTreeMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project20280/tree/SplayTreeMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,110 +107,113 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.BracketChecker.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ChainHashMap.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DoublyLinkedList.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HeapPriorityQueue.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LinkedBinaryTree.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LinkedDeque.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PQSortTestData.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SinglyLinkedList.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Treap.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TreapTest.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;JUnit.ArrayQueueTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArrayQueueTest.testDequeue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArrayQueueTest.testEnqueue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArrayQueueTest.testFirst.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArrayQueueTest.testIsEmpty.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArrayQueueTest.testSize.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArrayStackTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChainHashMapTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChainHashMapTest.testGet.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChainHashMapTest.testRemove.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChainHashMapTest.testSize.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testAdd.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testAddFirst.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testAddLast.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testGet.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testIsEmpty.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testRemove.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testRemoveFirst.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testRemoveLast.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testRotate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testSize.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CircularlyLinkedListTest.testToString.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testAdd.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testFirst.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testGet.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testIsEmpty.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testIterator.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testLast.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testRemove.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testRemoveLast.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testSize.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DoublyLinkedListTest.testToString.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HeapPriorityQueueTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HeapPriorityQueueTest.testMin.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.testAddRoot.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.testCreateLevelOrder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.testHeight.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.testInorder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.testRemove.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.testRootToPaths.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.testSize.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedBinaryTreeTest.testToString.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedDequeTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedQueueTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedQueueTest.testSize.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LinkedStackTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SinglyLinkedListTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SinglyLinkedListTest.testIsEmpty.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.SinglyLinkedListTest.testRemoveLast.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.TreapTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreapTest.testFirstEntry.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreapTest.testGet.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreapTest.testPut.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreapTest.testRemoveK.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreapTest.testRoot.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreapTest.testSize.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreeMapTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreeMapTest.testPut.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreeMapTest.testRoot.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TreeMapTest.testSize.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/comicmaster/Comp-Sci Folder/comp20280-2026-data-structures-2026-datastructures20280-2026/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.30114943&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.BracketChecker.executor": "Run",
+    "Application.ChainHashMap.executor": "Run",
+    "Application.DoublyLinkedList.executor": "Run",
+    "Application.HeapPriorityQueue.executor": "Run",
+    "Application.LinkedBinaryTree.executor": "Run",
+    "Application.LinkedDeque.executor": "Run",
+    "Application.PQSortTestData.executor": "Run",
+    "Application.SinglyLinkedList.executor": "Run",
+    "Application.SplayTreeMap.executor": "Run",
+    "Application.Treap.executor": "Run",
+    "Application.TreapTest.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "JUnit.AVLTreeMapTest.executor": "Run",
+    "JUnit.ArrayQueueTest.executor": "Run",
+    "JUnit.ArrayQueueTest.testDequeue.executor": "Run",
+    "JUnit.ArrayQueueTest.testEnqueue.executor": "Run",
+    "JUnit.ArrayQueueTest.testFirst.executor": "Run",
+    "JUnit.ArrayQueueTest.testIsEmpty.executor": "Run",
+    "JUnit.ArrayQueueTest.testSize.executor": "Run",
+    "JUnit.ArrayStackTest.executor": "Run",
+    "JUnit.ChainHashMapTest.executor": "Run",
+    "JUnit.ChainHashMapTest.testGet.executor": "Run",
+    "JUnit.ChainHashMapTest.testRemove.executor": "Run",
+    "JUnit.ChainHashMapTest.testSize.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testAdd.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testAddFirst.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testAddLast.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testGet.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testIsEmpty.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testRemove.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testRemoveFirst.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testRemoveLast.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testRotate.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testSize.executor": "Run",
+    "JUnit.CircularlyLinkedListTest.testToString.executor": "Run",
+    "JUnit.DoublyLinkedListTest.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testAdd.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testFirst.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testGet.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testIsEmpty.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testIterator.executor": "Debug",
+    "JUnit.DoublyLinkedListTest.testLast.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testRemove.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testRemoveLast.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testSize.executor": "Run",
+    "JUnit.DoublyLinkedListTest.testToString.executor": "Run",
+    "JUnit.HeapPriorityQueueTest.executor": "Run",
+    "JUnit.HeapPriorityQueueTest.testMin.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.testAddRoot.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.testCreateLevelOrder.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.testHeight.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.testInorder.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.testRemove.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.testRootToPaths.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.testSize.executor": "Run",
+    "JUnit.LinkedBinaryTreeTest.testToString.executor": "Run",
+    "JUnit.LinkedDequeTest.executor": "Run",
+    "JUnit.LinkedQueueTest.executor": "Run",
+    "JUnit.LinkedQueueTest.testSize.executor": "Run",
+    "JUnit.LinkedStackTest.executor": "Run",
+    "JUnit.SinglyLinkedListTest.executor": "Run",
+    "JUnit.SinglyLinkedListTest.testIsEmpty.executor": "Debug",
+    "JUnit.SinglyLinkedListTest.testRemoveLast.executor": "Debug",
+    "JUnit.SplayTreeMapTest.executor": "Run",
+    "JUnit.TreapTest.executor": "Run",
+    "JUnit.TreapTest.testFirstEntry.executor": "Run",
+    "JUnit.TreapTest.testGet.executor": "Run",
+    "JUnit.TreapTest.testPut.executor": "Run",
+    "JUnit.TreapTest.testRemoveK.executor": "Run",
+    "JUnit.TreapTest.testRoot.executor": "Run",
+    "JUnit.TreapTest.testSize.executor": "Run",
+    "JUnit.TreeMapTest.executor": "Run",
+    "JUnit.TreeMapTest.testPut.executor": "Run",
+    "JUnit.TreeMapTest.testRoot.executor": "Run",
+    "JUnit.TreeMapTest.testSize.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/comicmaster/Comp-Sci Folder/comp20280-2026-data-structures-2026-datastructures20280-2026/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.30114943",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -219,22 +222,9 @@
       <recent name="project20280.tree" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DoublyLinkedList">
-    <configuration name="DoublyLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="project20280.list.DoublyLinkedList" />
-      <module name="project20280" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="project20280.list.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Treap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="project20280.tree.Treap" />
+  <component name="RunManager" selected="JUnit.SplayTreeMapTest.testRemoveK">
+    <configuration name="SplayTreeMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.SplayTreeMap" />
       <module name="project20280" />
       <extension name="coverage">
         <pattern>
@@ -246,8 +236,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TreapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mortgage-calculator" />
+    <configuration name="AVLTreeMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project20280" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="project20280.tree.*" />
@@ -255,14 +245,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="project20280.tree" />
-      <option name="MAIN_CLASS_NAME" value="project20280.tree.TreapTest" />
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.AVLTreeMapTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TreapTest.testPut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mortgage-calculator" />
+    <configuration name="SplayTreeMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project20280" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="project20280.tree.*" />
@@ -270,15 +260,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="project20280.tree" />
-      <option name="MAIN_CLASS_NAME" value="project20280.tree.TreapTest" />
-      <option name="METHOD_NAME" value="testPut" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.SplayTreeMapTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TreapTest.testRemoveK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mortgage-calculator" />
+    <configuration name="SplayTreeMapTest.testRemoveK" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project20280" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="project20280.tree.*" />
@@ -286,20 +275,35 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="project20280.tree" />
-      <option name="MAIN_CLASS_NAME" value="project20280.tree.TreapTest" />
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.SplayTreeMapTest" />
       <option name="METHOD_NAME" value="testRemoveK" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TreeMapTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project20280" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project20280.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="project20280.tree" />
+      <option name="MAIN_CLASS_NAME" value="project20280.tree.TreeMapTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DoublyLinkedList" />
-        <item itemvalue="Application.Treap" />
-        <item itemvalue="JUnit.TreapTest.testRemoveK" />
-        <item itemvalue="JUnit.TreapTest.testPut" />
-        <item itemvalue="JUnit.TreapTest" />
+        <item itemvalue="JUnit.SplayTreeMapTest.testRemoveK" />
+        <item itemvalue="JUnit.SplayTreeMapTest" />
+        <item itemvalue="JUnit.AVLTreeMapTest" />
+        <item itemvalue="Application.SplayTreeMap" />
+        <item itemvalue="JUnit.TreeMapTest" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +355,11 @@
       <workItem from="1776341337067" duration="25000" />
       <workItem from="1776341382525" duration="251000" />
       <workItem from="1776341642880" duration="1923000" />
-      <workItem from="1776347958534" duration="311000" />
+      <workItem from="1776347958534" duration="2082000" />
+      <workItem from="1776594478616" duration="68000" />
+      <workItem from="1776694816935" duration="421000" />
+      <workItem from="1776863703471" duration="1957000" />
+      <workItem from="1776866502770" duration="1017000" />
     </task>
     <task id="LOCAL-00001" summary="Commiting treap">
       <option name="closed" value="true" />

@@ -28,6 +28,25 @@ public class SplayTreeMap<K extends Comparable<K>, V> extends TreeMap<K, V> {
      */
     private void splay(Position<Entry<K, V>> p) {
         // TODO
+        while (!isRoot(p)) {
+            Position<Entry<K, V>> parent = parent(p);
+            Position<Entry<K, V>> grandparent = parent(parent);
+
+            if (grandparent == null)
+            {
+                rotate(p);
+            }
+
+            else if ((p == left(parent)) == (parent == left(grandparent))) {
+                rotate(parent);
+                rotate(p);
+            }
+
+            else {
+                rotate(p);
+                rotate(p);
+            }
+        }
     }
 
     /**
@@ -38,6 +57,13 @@ public class SplayTreeMap<K extends Comparable<K>, V> extends TreeMap<K, V> {
     //@Override
     protected void rebalanceAccess(Position<Entry<K, V>> p) {
         // TODO
+        if (isExternal(p) && !isRoot(p)) {
+            p = parent(p);
+        }
+
+        if (!isRoot(p) || isInternal(p)) {
+            splay(p);
+        }
     }
 
     /**
@@ -59,7 +85,11 @@ public class SplayTreeMap<K extends Comparable<K>, V> extends TreeMap<K, V> {
     //@Override
     protected void rebalanceDelete(Position<Entry<K, V>> p) {
         // TODO
+        if (!isRoot(p)) {
+            splay(parent(p));
+        }
     }
+
 
     public static void main(String[] args) {
         SplayTreeMap<Integer, Integer> treeMap = new SplayTreeMap<Integer, Integer>();
