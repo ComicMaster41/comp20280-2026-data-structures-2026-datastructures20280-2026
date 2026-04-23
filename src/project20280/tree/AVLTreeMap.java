@@ -81,6 +81,8 @@ public class AVLTreeMap<K extends Comparable<K>, V> extends TreeMap<K, V> {
     @Override
     protected void rebalanceDelete(Position<Entry<K, V>> p) {
         // TODO
+        Entry<K, V> toReturn = super.remove(p);
+        if(toReturn != null) rebalance(root());
     }
 
     /**

@@ -3,9 +3,7 @@ package project20280.tree;
 import project20280.interfaces.Entry;
 import project20280.interfaces.Position;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
@@ -375,8 +373,43 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
      * @return the previous value associated with the removed key, or null if no
      * such entry exists
      */
+//    @Override
+//    public V remove(K key) throws IllegalArgumentException {
+//        Position<Entry<K, V>> find = treeSearch(root(), key);
+//        if (isExternal(find)) { // key not found
+//            rebalanceAccess(find);
+//            return null;
+//        }
+//
+//        V old = find.getElement().getValue();
+//        if (isInternal(left(find)) && isInternal(right(find))) { // has two internal chldren
+//            Position<Entry<K, V>> replacement = treeMax(left(find));
+//            set(find, replacement.getElement());
+//            find = replacement; // delete replacement instead
+//        }
+//
+//
+//        Position<Entry<K, V>> leaf;
+//        Position<Entry<K, V>> sibling;
+//        if (isExternal(left(find))){
+//            leaf = left(find);
+//            sibling = right(find);
+//        }
+//        else{
+//            leaf = right(find);
+//            sibling = left(find);
+//        }
+//        remove(leaf);
+////        remove(find);
+////        rebalanceDelete(sibling);
+//        rebalanceDelete(find);
+//        return old;
+//    }
+
     @Override
     public V remove(K key) throws IllegalArgumentException {
+//        System.out.println(toBinaryTreeString());
+
         Position<Entry<K, V>> find = treeSearch(root(), key);
         if (isExternal(find)) { // key not found
             rebalanceAccess(find);
@@ -390,12 +423,21 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
             find = replacement; // delete replacement instead
         }
 
-        // At least one external child
-        Position<Entry<K, V>> leaf = isExternal(left(find)) ? left(find) : right(find);
-        Position<Entry<K, V>> sibling = sibling(leaf);
+
+        Position<Entry<K, V>> leaf;
+        Position<Entry<K, V>> sibling;
+        if (isExternal(left(find))){
+            leaf = left(find);
+            sibling = right(find);
+        }
+        else{
+            leaf = right(find);
+            sibling = left(find);
+        }
+
         remove(leaf);
-        remove(find);
-        rebalanceDelete(sibling);
+
+        rebalanceDelete(find);
 
         return old;
     }
@@ -555,7 +597,10 @@ public class TreeMap<K, V> extends AbstractSortedMap<K, V> {
     }
 
     public String toString() {
-        return "";
+        Iterator<K> keys = keySet().iterator();
+        List<K> list = new ArrayList<>();
+        keys.forEachRemaining(list::add);
+        return list.toString();
     }
 
     /**

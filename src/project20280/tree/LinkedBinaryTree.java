@@ -360,6 +360,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
      */
     @Override
     public Position<E> parent(Position<E> p) throws IllegalArgumentException {
+        if(p == null) return null;
         return ((Node<E>) p).getParent();
     }
 
@@ -372,6 +373,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
      */
     @Override
     public Position<E> left(Position<E> p) throws IllegalArgumentException {
+        if(p == null) return null;
         return ((Node<E>) p).getLeft();
     }
 
@@ -384,6 +386,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
      */
     @Override
     public Position<E> right(Position<E> p) throws IllegalArgumentException {
+        if(p == null) return null;
         return ((Node<E>) p).getRight();
     }
 
@@ -400,7 +403,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
         if (root != null) throw new IllegalStateException("Root is not null!");
 
         root = createNode(e, null, null, null);
-        size = 1;
+        size++;
         return root;
     }
 
@@ -517,63 +520,116 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
      * @throws IllegalArgumentException if p is not a valid Position for this tree.
      * @throws IllegalArgumentException if p has two children.
      */
+//    public E remove(Position<E> p) throws IllegalArgumentException {
+//        // TODO
+//        Node<E> myNode = validate(p);
+//        E rm = myNode.getElement();
+//
+//        Node<E> left = myNode.getLeft();
+//        Node<E> right = myNode.getRight();
+//
+//        // check if its the root
+//        if (left != null && right != null){ //hmm, its a leaf node; easy peasy
+//            throw new IllegalArgumentException("Both left and right have children!");
+//        }
+//
+//        // Now check if we're left or right
+//        Node<E> child;
+//        if (left != null) {
+//            child = left;
+//        }
+//        else child = right;
+//        Node<E> parent = myNode.getParent();
+//
+//        // we want to reconnect the right node now
+//        if (parent == null) { // are we at the top of the tree?
+//            root = child;
+//            if (child != null)
+//                child.setParent(null);
+//        }
+//
+//        // Relink so that the child is now in the tree in place of the removed node
+//        else {
+//            // Now set the parent's leaf node to be this child node
+//            // if the removed nodes parent is left
+//            if (parent.getLeft() == myNode) {
+//                parent.setLeft(child);
+//            }
+//
+//            else if (parent.getRight() == myNode) {
+//                parent.setRight(child);
+//            }
+//
+//            else {
+//                throw new IllegalArgumentException("Position is not right");
+//            }
+//        }
+//
+//        size--;
+//        // Ensure we have a single parent node with no left or right
+//        // []
+//        // / \
+//        // It's detatching the removal node from the tree
+//        myNode.setParent(myNode);
+//        myNode.setLeft(null);
+//        myNode.setRight(null);
+//
+//        return rm;
+//    }
+
     public E remove(Position<E> p) throws IllegalArgumentException {
-        // TODO
-        Node<E> myNode = validate(p);
-        E rm = myNode.getElement();
+        if(p == null ) return null;
+        E temp = p.getElement();
 
-        Node<E> left = myNode.getLeft();
-        Node<E> right = myNode.getRight();
-
-        // check if its the root
-        if (left != null && right != null){ //hmm, its a leaf node; easy peasy
-            throw new IllegalArgumentException("Both left and right have children!");
-        }
-
-        // Now check if we're left or right
-        Node<E> child;
-        if (left != null) {
-            child = left;
-        }
-        else child = right;
-        Node<E> parent = myNode.getParent();
-
-        // we want to reconnect the right node now
-        if (parent == null) { // are we at the top of the tree?
-            root = child;
-            if (child != null)
-                child.setParent(null);
-        }
-
-        // Relink so that the child is now in the tree in place of the removed node
-        else {
-            // Now set the parent's leaf node to be this child node
-            // if the removed nodes parent is left
-            if (parent.getLeft() == myNode) {
-                parent.setLeft(child);
+        if(((((Node<E>) p).getLeft() != null) && (((Node<E>) p).getRight() != null))){
+            //might have to make the if statement .get...().getelement() != null
+            //all this might need to go if it breaks other things
+            boolean toThrow = true;
+            if(((Node<E>) p).getLeft().getElement() == null){
+                ((Node<E>) p).setLeft(null);
+                toThrow = false;
             }
-
-            else if (parent.getRight() == myNode) {
-                parent.setRight(child);
-            }
-
             else {
-                throw new IllegalArgumentException("Position is not right");
+                if (((Node<E>) p).getRight().getElement() == null) {
+                    ((Node<E>) p).setRight(null);
+                    toThrow = false;
+                }
+                else{
+                    throw new IllegalArgumentException();
+                }
+            }
+//            if(toThrow) throw new IllegalArgumentException();
+        }
+        if(((Node<E>) p).getParent() == null){
+            if(((Node<E>) p).getLeft() != null){
+                root = ((Node<E>) p).getLeft();
+            }else{
+                root = ((Node<E>) p).getRight();
             }
         }
-
+        else if(((Node<E>) p).getLeft() == null && ((Node<E>) p).getRight() == null){
+            if(((Node<E>) p).getParent().getLeft() == p){
+                ((Node<E>) p).getParent().setLeft(null);
+            }else{
+                ((Node<E>) p).getParent().setRight(null);
+            }
+        }
+        else if(((Node<E>) p).getLeft() != null){
+            if(((Node<E>) p).getParent().getLeft() == p){
+                ((Node<E>) p).getParent().setLeft(((Node<E>) p).getLeft());
+            }else{
+                ((Node<E>) p).getParent().setRight(((Node<E>) p).getLeft());
+            }
+        }else if(((Node<E>) p).getRight() != null){
+            if(((Node<E>) p).getParent().getLeft() == p){
+                ((Node<E>) p).getParent().setLeft(((Node<E>) p).getRight());
+            }else{
+                ((Node<E>) p).getParent().setRight(((Node<E>) p).getRight());
+            }
+        }
         size--;
-        // Ensure we have a single parent node with no left or right
-        // []
-        // / \
-        // It's detatching the removal node from the tree
-        myNode.setParent(myNode);
-        myNode.setLeft(null);
-        myNode.setRight(null);
-
-        return rm;
+        return temp;
     }
-
     public String toString() {
         return positions().toString();
     }
